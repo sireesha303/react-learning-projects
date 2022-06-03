@@ -1,0 +1,29 @@
+.history-list-item{
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    /* justify-content: space-around;  */
+
+}
+
+.time-accessed{
+    margin-right:60px;
+}
+
+.history-item-img{
+    height: 25px;
+    width: 25px;
+    margin-right:60px;
+}
+
+.history-item-title{
+    text-decoration: none;
+    margin-right:10px;
+    color: black;
+}
+
+.domain-url-el{
+    color:#b5b3b3;
+    margin-right:70px;
+}
