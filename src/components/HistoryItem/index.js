@@ -1,8 +1,12 @@
 import './index.css'
 
 const HistoryItem = props =>{
-    const {historyDetails} = props
-    const {timeAccessed,logoUrl,title,domainUrl} = historyDetails
+    const {historyDetails, deleteHistoryItem} = props
+    const {timeAccessed,logoUrl,title,domainUrl,id} = historyDetails
+
+    const onClickOfDeleteBtn = () =>(
+        deleteHistoryItem(id)
+    )
     return(
         <li className="history-list-item">
             <div className='history-item-content-container'>
@@ -12,7 +16,7 @@ const HistoryItem = props =>{
                 <p className='domain-url-el'>{domainUrl}</p>
             </div>
             <div>
-                <button className='delete-btn'><img src="https://assets.ccbp.in/frontend/react-js/delete-img.png" alt="delete"/></button>
+                <button className='delete-btn' onClick={onClickOfDeleteBtn}><img src="https://assets.ccbp.in/frontend/react-js/delete-img.png" alt="delete"/></button>
             </div>
             
         </li>

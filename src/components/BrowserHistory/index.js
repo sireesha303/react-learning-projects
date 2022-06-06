@@ -79,16 +79,25 @@ const initialHistoryList = [
 class BrowserHistory extends Component{
      state ={
           searchInput:"",
+          historyItemsList :initialHistoryList,
      }
 
      onChangeSearchInput = event =>{
           this.setState({searchInput:event.target.value})
      }
 
-     render(){
-          const {searchInput} = this.state
+     deleteHistoryItem = id => {
+      console.log("in broser")
+       const {historyItemsList} = this.state 
+       const test = historyItemsList.filter(eachHistory =>eachHistory.id !== id)
+       this.setState({historyItemsList:test})
+       console.log("in browser end")
+     }
 
-          const filteredHistoryItems = initialHistoryList.filter(eachHistory =>(eachHistory.title.toLowerCase().includes(searchInput.toLowerCase())))
+     render(){
+          const {searchInput,historyItemsList} = this.state
+
+          const filteredHistoryItems = historyItemsList.filter(eachHistory =>(eachHistory.title.toLowerCase().includes(searchInput.toLowerCase())))
 
           return(
               <div className="app-container">
@@ -102,7 +111,7 @@ class BrowserHistory extends Component{
                 <ul className="history-items-container"> 
                       {filteredHistoryItems.map(eachHistoryItem =>(
                           <HistoryItem 
-                            key={eachHistoryItem.id} historyDetails={eachHistoryItem}
+                            key={eachHistoryItem.id} historyDetails={eachHistoryItem} deleteHistoryItem={this.deleteHistoryItem}
                           />
                       ))}
                     
