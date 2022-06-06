@@ -3,12 +3,20 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    /* justify-content: space-around;  */
+    justify-content: space-between;
 
 }
 
 .time-accessed{
-    margin-right:60px;
+    margin-right:15px; 
+    font-size: 10px;
+}
+
+@media screen and (min-width: 768px){
+    .time-accessed{
+        margin-right:60px; 
+        font-size: 15px;
+    }
 }
 
 .history-item-img{
@@ -23,7 +31,29 @@
     color: black;
 }
 
-.domain-url-el{
-    color:#b5b3b3;
-    margin-right:70px;
+@media screen and (min-width: 600px){
+    .domain-url-el{
+        color:#b5b3b3;
+        margin-right:70px;
+        display: flex;
+    }
 }
+
+
+.domain-url-el{
+    display: none;
+} 
+
+
+
+
+.history-item-content-container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+ .delete-btn{
+    cursor:pointer;
+} 

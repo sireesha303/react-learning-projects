@@ -91,27 +91,23 @@ class BrowserHistory extends Component{
           const filteredHistoryItems = initialHistoryList.filter(eachHistory =>(eachHistory.title.toLowerCase().includes(searchInput.toLowerCase())))
 
           return(
-               <div>
-                    <div className="heading-container">
-                    <img src="https://assets.ccbp.in/frontend/react-js/history-website-logo-img.png " alt="history-app=logo" className="app-logo"/>
+              <div className="app-container">
+                <div className="heading-container">
+                    <img src="https://assets.ccbp.in/frontend/react-js/history-website-logo-img.png " alt="history-app=logo" />
                     <div className="search-input-container">
-                         <img src="https://assets.ccbp.in/frontend/react-js/search-img.png" alt="search-img" className="search-img"/>
-                         <input type="search" className="input-el" placeholder="Search History" onChange={this.onChangeSearchInput}/>    
+                           <img src="https://assets.ccbp.in/frontend/react-js/search-img.png" alt="search-img" className="search-img"/>
+                           <input type="search" className="input-el" placeholder="Search History" onChange={this.onChangeSearchInput}/>    
                     </div>
-                    </div>
-                    <div className="history-items-container">
-                         <ul>
-                              {filteredHistoryItems.map(eachHistoryItem =>(
-                                   <HistoryItem 
-                                   key={eachHistoryItem.id} historyDetails={eachHistoryItem}
-                                   />
-                              ))}
-                         </ul>
-                        
-                    </div>
-               </div>
-              
-
+                </div>
+                <ul className="history-items-container"> 
+                      {filteredHistoryItems.map(eachHistoryItem =>(
+                          <HistoryItem 
+                            key={eachHistoryItem.id} historyDetails={eachHistoryItem}
+                          />
+                      ))}
+                    
+                </ul>
+              </div>
           )
      }
 }
