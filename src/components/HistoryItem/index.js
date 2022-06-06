@@ -4,9 +4,10 @@ const HistoryItem = props =>{
     const {historyDetails, deleteHistoryItem} = props
     const {timeAccessed,logoUrl,title,domainUrl,id} = historyDetails
 
-    const onClickOfDeleteBtn = () =>(
+    const onClickOfDeleteBtn = () =>{
         deleteHistoryItem(id)
-    )
+    }
+        
     return(
         <li className="history-list-item">
             <div className='history-item-content-container'>

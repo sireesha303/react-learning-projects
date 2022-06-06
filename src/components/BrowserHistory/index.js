@@ -87,11 +87,9 @@ class BrowserHistory extends Component{
      }
 
      deleteHistoryItem = id => {
-      console.log("in broser")
        const {historyItemsList} = this.state 
        const test = historyItemsList.filter(eachHistory =>eachHistory.id !== id)
        this.setState({historyItemsList:test})
-       console.log("in browser end")
      }
 
      render(){
