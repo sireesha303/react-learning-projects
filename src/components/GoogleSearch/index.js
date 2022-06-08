@@ -15,7 +15,8 @@ const intialSuggestionList = [
 
 class GoogleSearch extends Component{
     state = {suggestionlist:intialSuggestionList,
-        issearchinputclicked:false,
+        // issearchinputclicked:false,
+        issearchinputclicked:true,
         searchinput:"",
     }
 
@@ -32,6 +33,9 @@ class GoogleSearch extends Component{
 
     }
 
+    selectInputItem = value =>{
+        this.setState({searchinput:value})
+    }
 
     render(){
         const {suggestionlist,issearchinputclicked,searchinput} = this.state
@@ -50,13 +54,18 @@ class GoogleSearch extends Component{
                             type="search" 
                             className="search-input" 
                             placeholder="Search Google or type a URL" 
-                            onBlur={this.onBlurOfSearchInput} 
+                            // onBlur={this.onBlurOfSearchInput} 
                             onChange={this.onChangeOfSearchInput}
                             onClick={this.onClickOfSearchInput}
+                            value={searchinput}
                             />
                         </div>
                         {issearchinputclicked && <ul>
-                            {filteredSuggestionsList.map(eachSuggestion =>(<SuggestionItem suggestionDetails={eachSuggestion} key={eachSuggestion.id}/>))}
+                            {filteredSuggestionsList.map(eachSuggestion =>(<SuggestionItem 
+                            suggestionDetails={eachSuggestion} 
+                            key={eachSuggestion.id} 
+                            selectInputItem={this.selectInputItem}
+                            />))}
                         </ul>}
                     </div>  
                 </div>

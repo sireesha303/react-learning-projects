@@ -1,0 +1,57 @@
+.suggestion-item-container{
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin:1px;
+    padding:0px;
+}
+
+.arrow-img{
+    height:30px;
+    width:30px;
+    margin-right: 10px;
+}
+
+.arrow-btn{
+    height:30px;
+    width:30px;
+    background-color: white;
+    border: none;
+}
+
+.suggestion-text {
+    color: #475569;
+    font-family: 'Roboto';
+    font-size: 16px;
+    margin: 1px;
+}
+  
+@media screen and (min-width: 768px) {
+    .suggestion-text {
+      font-size: 20px;
+    }
+}
+
+.arrow-btn {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    margin-right: 2px;
+}
+  
+.arrow-img {
+    height: 16px;
+    width: 16px;
+    
+}
+  
+@media screen and (min-width: 768px) {
+    .arrow-img {
+      height: 24px;
+      width: 24px;
+    }
+}
+  
