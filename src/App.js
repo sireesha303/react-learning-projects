@@ -3,13 +3,14 @@ import {Component} from 'react'
 import BrowserHistory from './components/BrowserHistory'
 import Authentication from './components/Authentication'
 import GoogleSearch from './components/GoogleSearch'
-
+import IPLDashBoard from './components/IPLDashBoard'
 
 const listOfProjects = {
   initial:'INITIAL',
   browserhistory:'BROWSERHISTORY',
   authentication:'AUTHENTICATION',
-  googlesearch:"GOOGLESEARCH"
+  googlesearch:"GOOGLESEARCH",
+  ipldashboard:"IPL DASHBOARD"
 
 }
 
@@ -31,6 +32,10 @@ class App extends Component{
     this.setState({currentProject:listOfProjects.googlesearch})
   }
 
+  onClickOfIPLDashBoard = () =>{
+    this.setState({currentProject:listOfProjects.ipldashboard})
+  }
+
   render(){
     const {currentProject} = this.state
 
@@ -43,6 +48,7 @@ class App extends Component{
             <button onClick={this.onClickBrowserHistory}>Browser History</button>
             <button onClick={this.onClickAuthentication}>Authentication</button>
             <button onClick={this.onClickOfGoogleSearch}>Google Search</button>
+            <button onClick={this.onClickOfIPLDashBoard}>IPL DashBoard</button>
           </div>
         )
       case listOfProjects.browserhistory:
@@ -51,6 +57,8 @@ class App extends Component{
         return <Authentication />
       case listOfProjects.googlesearch:
         return <GoogleSearch />
+      case listOfProjects.ipldashboard:
+        return <IPLDashBoard />
       default:
         return null
     }
